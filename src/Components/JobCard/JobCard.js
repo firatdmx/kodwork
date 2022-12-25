@@ -2,9 +2,9 @@ import React from 'react';
 import { Text, View, TouchableWithoutFeedback } from 'react-native';
 import styles from './JobCard.styles';
 
-function JobCard({item, handleJob}) {
+function JobCard({item, handleJob,deleteStyle}) {
     return (
-      <View style={styles.renderView}>
+      <View style={deleteStyle ? styles.deleteRenderView : styles.renderView}>
         <TouchableWithoutFeedback onPress={() => handleJob(item)}>
           <View>
             <Text style={styles.textTitle}>{item.name}</Text>

@@ -13,6 +13,18 @@ export default styles = StyleSheet.create({
       height:'auto',
   
     },
+    deleteRenderView:{
+      flex:1,
+      backgroundColor:'white',
+      margin:10,
+      marginBottom:3,
+      padding:10,
+      borderTopLeftRadius:8,
+      borderTopRightRadius:8,
+      borderWidth:1,
+      borderColor:'#777777',
+      height:'auto',
+    },
     textTitle:{
       fontSize:15,
       color:'black',

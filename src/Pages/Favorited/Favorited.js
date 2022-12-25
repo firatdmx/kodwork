@@ -1,20 +1,33 @@
-import { StyleSheet, View, Button } from 'react-native'
 import React from 'react'
-import { FlatList } from 'react-native-gesture-handler';
+import { View, Button, Alert, TouchableOpacity, FlatList, Text } from 'react-native'
 import { useDispatch, useSelector } from 'react-redux';
 import { clearAll, removeFromFavs } from '../../features/app/favsSlicer';
 import JobCard from '../../Components/JobCard';
+import styles from './Favorited.styles'
 
 
 const Favorited = ({navigation}) => {
   const dispatch = useDispatch();
+
+
+
   const handleRemove = (jobData) => {
-    dispatch(removeFromFavs(jobData.id));
+    const options = [
+      { text: "Remove", onPress: () =>  dispatch(removeFromFavs(jobData.id)) },
+      { text: "Cancel"}, 
+    ];
+
+    Alert.alert("Warning", "The job will be removed from favourites", options)
   }
 
   const render = ({item}) => {
     return(
-      <JobCard item={item} handleJob={handleRemove} />
+      <View>
+        <JobCard item={item} handleJob={() => null} deleteStyle />
+        <TouchableOpacity  activeOpacity={0.5} style={styles.delete} onPress={() => handleRemove(item)}>
+          <Text style={styles.deltext}>REMOVE FROM FAVOURITES</Text>
+        </TouchableOpacity>
+      </View>
     )
   }
 
@@ -32,5 +45,3 @@ const Favorited = ({navigation}) => {
 }
 
 export default Favorited;
-
-const styles = StyleSheet.create({})
