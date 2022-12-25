@@ -29,7 +29,7 @@ export const favsSlicer = createSlice({
             const item = action.payload;
             let signList = [];
             signList = [...state.signedUP, item];
-            ToastAndroid.show("Signed up successfully!", ToastAndroid.SHORT)
+            ToastAndroid.show("Submitted successfully!", ToastAndroid.SHORT)
             return {...state, signedUP: signList}    
         },
 
