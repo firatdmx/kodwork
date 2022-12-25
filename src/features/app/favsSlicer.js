@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { Alert, ToastAndroid } from "react-native";
+import { ToastAndroid } from "react-native";
 
 export const favsSlicer = createSlice({
     name: 'jobs',

@@ -10,7 +10,7 @@ const useFetch = (URL) => {
         try {
             const {data: responseData} = await axios.get(URL)
             setDatax(responseData.results)
-            //console.log(responseData.results)
+            //console.log("Response Data: ", responseData.results)
             setLoading(false)
             
         } catch (error) {

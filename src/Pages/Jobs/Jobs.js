@@ -1,9 +1,11 @@
 import { Text, View, FlatList, ActivityIndicator } from 'react-native'
 import useFetch from '../../hooks/useFetch/useFetch';
 import JobCard from '../../Components/JobCard';
+import Config from 'react-native-config';
+import styles from './Jobs.styles'
 
 const Jobs = ({navigation}) => {
-  const URL = "https://www.themuse.com/api/public/jobs?page=2"
+  const URL = Config.REACT_APP_API_URL
   const {loading, datax, error} = useFetch(URL)
 
   const handleFavoriteJob = (jobData) => {
@@ -26,8 +28,8 @@ const Jobs = ({navigation}) => {
 
   if (error){
     return (
-      <View style={{flex:1,justifyContent:'center',alignItems:'center'}}>
-        <Text style={{fontWeight:'bold',color:'red'}}> Something went wrong!!!</Text>
+      <View style={styles.errorContainer}>
+        <Text style={styles.errorText}> Something went wrong!!!</Text>
         <ActivityIndicator size={'large'} />
       </View>
     )

@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, Button, Alert } from 'react-native'
+import { Text, View } from 'react-native'
 import React from 'react'
 import RenderHTML from 'react-native-render-html'
 import { useWindowDimensions } from 'react-native';

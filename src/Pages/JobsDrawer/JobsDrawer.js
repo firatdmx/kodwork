@@ -1,4 +1,3 @@
-import { StyleSheet } from 'react-native'
 import React from 'react'
 import { createDrawerNavigator } from '@react-navigation/drawer'
 
@@ -21,5 +20,3 @@ const Jobs = () => {
 }
 
 export default Jobs
-
-const styles = StyleSheet.create({})
